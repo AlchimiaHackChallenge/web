@@ -1,5 +1,6 @@
 <template>
   <v-carousel
+    v-if="!isMobile()"
     cycle="true"
     >
     <v-carousel-item
@@ -28,6 +29,17 @@ export default {
             { src: 'http://www.italika.mx/WebVisorArchivosITK/Archivo.aspx?Tipo=3&Archivo=WebPortalMexicoITK/img/Slide/Mexico/slide-Fiera.jpg'},
             { src: 'http://www.italika.mx/WebVisorArchivosITK/Archivo.aspx?Tipo=3&Archivo=WebPortalMexicoITK/img/Slide/Mexico/Beneficios.jpg'},
         ],
-      }),
-  }
+    }),
+    
+    methods: {
+        isMobile() {
+            if( screen.width <= 760 ) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    },
+}
 </script>
