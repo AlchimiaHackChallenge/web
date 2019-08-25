@@ -10,6 +10,7 @@
   </v-layout>
   <v-layout row>
     <v-flex xs12>
+      
       <h1 class="accent--text">FT 250 TS</h1>
       <p>
         Esta motocicleta de trabajo es para los que buscan una fiel compañera que les permita ser más productivos en sus días.
@@ -27,19 +28,23 @@
       </p>
     </v-flex>
   </v-layout>
-  <v-expansion-panel popout>
-    <v-expansion-panel-content>
-      <div slot="header">
-        <h4 class="">Motor</h4> 
-      </div>
-      <v-data-table
-       show-group-by="false"
-        hide-default-footer
-        hide-default-headers
-        :items="motor">
-      </v-data-table>
-    </v-expansion-panel-content>
-  </v-expansion-panel>
+  <v-expansion-panels>
+    <v-expansion-panel>
+      <v-expansion-panel-header>
+        Motor
+      </v-expansion-panel-header>
+      <v-expansion-panel-content>
+        <v-simple-table>
+          <tbody>
+            <tr v-for="(item, i) in motor" :key="i">
+              <td><strong>{{ item.title }}</strong></td>
+              <td>{{ item.description }}</td>
+            </tr>
+          </tbody>
+        </v-simple-table>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels>
 </v-container>
 </template>
 
