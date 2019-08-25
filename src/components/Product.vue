@@ -59,6 +59,21 @@
         </v-simple-table>
       </v-expansion-panel-content>
     </v-expansion-panel>
+    <v-expansion-panel>
+      <v-expansion-panel-header>
+        Dimensiones y Peso
+      </v-expansion-panel-header>
+      <v-expansion-panel-content>
+        <v-simple-table>
+          <tbody>
+            <tr v-for="(item, i) in motor" :key="i">
+              <td><strong>{{ item.title }}</strong></td>
+              <td>{{ item.description }}</td>
+            </tr>
+          </tbody>
+        </v-simple-table>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
   </v-expansion-panels>
 </v-container>
 </template>
@@ -108,8 +123,8 @@ export default {
                 title: 'Capacidad de aceite',
                 description: '1.1 L'
             }
-],
-chasis: [
+        ],
+        chasis: [
             {
                 title: 'Suspensión delantera',
                 description: 'Horquilla telescópica'
@@ -134,8 +149,33 @@ chasis: [
                 title: 'Llanta trasera',
                 description: '110/80-R18'
             },
-
-],
+        ],
+        dims: [
+            {
+                title: 'Largo total',
+                description: '2100 mm'
+            },
+            {
+                title: 'Ancho total',
+                description: '700 mm'
+            },
+            {
+                title: 'Alto total',
+                description: '1030 mm'
+            },
+            {
+                title: 'Altura del asiento',
+                description: '770 mm'
+            },
+            {
+                title: 'Capacidad de carga',
+                description: '150 kg'
+            },
+            {
+                title: 'Peso en seco',
+                description: '124.5 kg'
+            },
+        ],
     })
 }
 </script>
