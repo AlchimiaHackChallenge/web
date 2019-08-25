@@ -44,6 +44,21 @@
         </v-simple-table>
       </v-expansion-panel-content>
     </v-expansion-panel>
+    <v-expansion-panel>
+      <v-expansion-panel-header>
+        Chasis
+      </v-expansion-panel-header>
+      <v-expansion-panel-content>
+        <v-simple-table>
+          <tbody>
+            <tr v-for="(item, i) in motor" :key="i">
+              <td><strong>{{ item.title }}</strong></td>
+              <td>{{ item.description }}</td>
+            </tr>
+          </tbody>
+        </v-simple-table>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
   </v-expansion-panels>
 </v-container>
 </template>
@@ -61,7 +76,66 @@ export default {
                 title: 'Cilindrada',
                 description: '250 CC'
             },
-        ]
+            {
+                title: 'Velocidad máxima',
+                description: '120 km/h'
+            },
+            {
+                title: 'Potencia máxima',
+                description: '18 Hp @ 8500 RPM'
+            },
+            {
+                title: 'Torque máximo',
+                description: '16.g N-m @ 6500 RPM'
+            },
+            {
+                title: 'Rendimiento de combustible',
+                description: '24 km/L'
+            },
+            {
+                title: 'Sistema de arranque',
+                description: 'Eléctrico y de pedal'
+            },
+            {
+                title: 'Transmisión Final',
+                description: '16 L'
+            },
+            {
+                title: 'Rendimiento de combustible por tanque',
+                description: '384 km'
+            },
+            {
+                title: 'Capacidad de aceite',
+                description: '1.1 L'
+            }
+],
+chasis: [
+            {
+                title: 'Suspensión delantera',
+                description: 'Horquilla telescópica'
+            },
+            {
+                title: 'Suspensión trasera',
+                description: 'Basculante con doble amortiguador'
+            },
+            {
+                title: 'Frenos delanteros',
+                description: 'Disco sencillo'
+            },
+            {
+                title: 'Frenos traseros',
+                description: 'Tambor'
+            },
+            {
+                title: 'Llanta delantera',
+                description: '80/90-R18'
+            },
+            {
+                title: 'Llanta trasera',
+                description: '110/80-R18'
+            },
+
+],
     })
 }
 </script>
